@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+
+Sitemap: https://skv-sch.github.io/sitemap.xml
