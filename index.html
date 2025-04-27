@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sri Kalyanathissa college</title>
@@ -930,19 +931,15 @@ The school supports students through cultural events and personal growth. It hel
   object-fit: cover;
   border-radius: 10px;
 }
-<style>
-.dropdown-menu {
-    background-color: white; /* or light color */
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+/* Smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
 }
-.dropdown-item {
-    color: black;
+
+/* Fix scroll position so the section isn't hidden under navbar */
+section {
+  scroll-margin-top: 80px; /* adjust if your navbar is taller or shorter */
 }
-.dropdown-item:hover {
-    background-color: #f1f1f1;
-}
-</style>
 
                </style>
                </head>                  
@@ -973,15 +970,14 @@ The school supports students through cultural events and personal growth. It hel
                 <li class="nav-item">
                     <a class="nav-link" href="#news">News</a>
                 </li>
-                <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="collegeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    College
-  </a>
-  <ul class="dropdown-menu" aria-labelledby="collegeDropdown">
-    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#schoolProfileModal">School Profile</a></li>
-    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#historyModal">History of College</a></li>
-    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#principalModal">The Principal</a></li>
-  </ul>
+                <li class="nav-item">
+  <a class="nav-link" href="#school-profile">School Profile</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#principal">Principal</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#history">History</a>
 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#staff">Staff</a>
@@ -1395,7 +1391,56 @@ The school supports students through cultural events and personal growth. It hel
     </div>
 </section>
                 
-                
+                <!-- School Profile Section -->
+<section id="school-profile" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4 fade-in">School Profile</h2>
+    <div class="text-center mb-4">
+      <img src="3.jpg" alt="School Logo" class="img-fluid mb-3" style="max-height: 150px;">
+      <img src="3.jpg" alt="School Flag" class="img-fluid" style="max-height: 150px;">
+    </div>
+    <div class="glass p-4 rounded">
+      <p class="lead">Sri Kalyanathissa Vidyalaya, located in Batapola, Galle District, was established in 1974 with a vision to blend traditional Sri Lankan values with modern education.</p>
+      <p>Serving over 1,385 students from Grades 1 to 11, the school focuses on holistic development through a balanced curriculum of academics, arts, and sports, deeply rooted in Buddhist principles and global educational standards.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Principal Section -->
+<section id="principal" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4 fade-in">Our Principal</h2>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-6 text-center">
+        <div class="glass p-4 rounded">
+          <img src="2.jpg" alt="Principal" class="staff-image mb-3">
+          <h3>Dr. Sarah Perera</h3>
+          <p class="mt-2">Principal, Sri Kalyanathissa Vidyalaya</p>
+          <h5 class="mt-4">Principal's Message</h5>
+          <p>"At Sri Kalyanathissa Vidyalaya, we believe education is the key to a brighter future. Our aim is to nurture each student's potential, instill cultural values, and prepare them to face global challenges with confidence, knowledge, and integrity."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- History Section -->
+<section id="history" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4 fade-in">Our History</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="glass p-4 rounded">
+          <p class="lead">Founded in 1974, Sri Kalyanathissa Vidyalaya was born out of a vision to provide holistic education rooted in Sri Lankan Buddhist traditions.</p>
+          <p>From a modest beginning, the school has grown into a premier educational institution in the Southern Province. Our rich legacy of academic excellence, cultural pride, and community service continues to inspire future generations of students.</p>
+        </div>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="2.jpg" alt="School History" class="img-fluid rounded glass" style="max-height:400px; object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</section>
   
     <!-- Staff Section -->
     <section id="staff" class="py-5">
@@ -1542,6 +1587,7 @@ The school supports students through cultural events and personal growth. It hel
   </div>
 </section>
 
+
     <!-- News Modal -->
     <div class="modal fade" id="newsModal1" tabindex="-1">
         <div class="modal-dialog modal-lg">
@@ -1606,50 +1652,6 @@ The school supports students through cultural events and personal growth. It hel
     </div>
 <!-- News Modal -->
 
-<!-- School Profile Modal -->
-<div class="modal fade" id="schoolProfileModal" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content modal-glass">
-      <div class="modal-header">
-        <h5 class="modal-title">School Profile</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p>Here you can write about the school profile in detail.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- History of College Modal -->
-<div class="modal fade" id="historyModal" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content modal-glass">
-      <div class="modal-header">
-        <h5 class="modal-title">History of College</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p>Here you can write about the history of the college.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Principal Modal -->
-<div class="modal fade" id="principalModal" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content modal-glass">
-      <div class="modal-header">
-        <h5 class="modal-title">The Principal</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p>Here you can write about the Principal's message and profile.</p>
-      </div>
-    </div>
-  </div>
-</div>
 
       <section id="downlodpdf" class="downlodpdf-section">
     <div class="container mb-5">
