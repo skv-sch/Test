@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sri Kalyanathissa college</title>
@@ -909,6 +908,42 @@ The school supports students through cultural events and personal growth. It hel
               font-size: 16px;
               }
                }
+               
+               
+               /* Uniform Section Cards */
+#uniforms .card {
+  border: none;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#uniforms .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+#uniforms img {
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+<style>
+.dropdown-menu {
+    background-color: white; /* or light color */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.dropdown-item {
+    color: black;
+}
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+</style>
+
                </style>
                </head>                  
                 <body>
@@ -938,6 +973,16 @@ The school supports students through cultural events and personal growth. It hel
                 <li class="nav-item">
                     <a class="nav-link" href="#news">News</a>
                 </li>
+                <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="collegeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    College
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="collegeDropdown">
+    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#schoolProfileModal">School Profile</a></li>
+    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#historyModal">History of College</a></li>
+    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#principalModal">The Principal</a></li>
+  </ul>
+</li>
                 <li class="nav-item">
                     <a class="nav-link" href="#staff">Staff</a>
                 </li>
@@ -1402,6 +1447,10 @@ The school supports students through cultural events and personal growth. It hel
                     </div>
                 </div>
                 <!-- Add more staff cards -->
+                <div class="text-center mt-4">
+    <button id="show-more-staff" class="btn btn-primary">Show All Staff</button>
+    <button id="show-less-staff" class="btn btn-secondary" style="display: none;">Show Less Staff</button>
+</div>
             </div>
         </div>
     <!-- Prefects Section -->
@@ -1450,9 +1499,48 @@ The school supports students through cultural events and personal growth. It hel
                     </div>
                 </div>
                 <!-- Add more prefect cards -->
+                <div class="text-center mt-4">
+    <button id="show-more-prefects" class="btn btn-primary">Show All Prefects</button>
+    <button id="show-less-prefects" class="btn btn-secondary" style="display: none;">Show Less Prefects</button>
+</div>
             </div>
         </div>
     </section>
+    <!-- School Uniform Section -->
+<section id="uniforms" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">School Uniform</h2>
+    
+    <div class="row g-4">
+      <!-- Boys Grade 1-9 -->
+      <div class="col-md-4">
+        <div class="card glass text-center p-3 h-100">
+          <img src="boys-1-9.jpg" alt="Boys Uniform (Grade 1-9)" class="img-fluid rounded mb-3">
+          <h4>Boys Uniform (Grade 1-9)</h4>
+          <p>White short-sleeve shirt with blue shorts. Includes school logo badge.</p>
+        </div>
+      </div>
+
+      <!-- Boys Grade 10-11 -->
+      <div class="col-md-4">
+        <div class="card glass text-center p-3 h-100">
+          <img src="boys-10-11.jpg" alt="Boys Uniform (Grade 10-11)" class="img-fluid rounded mb-3">
+          <h4>Boys Uniform (Grade 10-11)</h4>
+          <p>White long-sleeve shirt with long white trousers. Includes school logo badge and tie.</p>
+        </div>
+      </div>
+
+      <!-- Girls All Grades -->
+      <div class="col-md-4">
+        <div class="card glass text-center p-3 h-100">
+          <img src="girls.jpg" alt="Girls Uniform" class="img-fluid rounded mb-3">
+          <h4>Girls Uniform</h4>
+          <p>White school frock with blue belt and school badge. Same for all grades.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- News Modal -->
     <div class="modal fade" id="newsModal1" tabindex="-1">
@@ -1518,6 +1606,50 @@ The school supports students through cultural events and personal growth. It hel
     </div>
 <!-- News Modal -->
 
+<!-- School Profile Modal -->
+<div class="modal fade" id="schoolProfileModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content modal-glass">
+      <div class="modal-header">
+        <h5 class="modal-title">School Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Here you can write about the school profile in detail.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- History of College Modal -->
+<div class="modal fade" id="historyModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content modal-glass">
+      <div class="modal-header">
+        <h5 class="modal-title">History of College</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Here you can write about the history of the college.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Principal Modal -->
+<div class="modal fade" id="principalModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content modal-glass">
+      <div class="modal-header">
+        <h5 class="modal-title">The Principal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Here you can write about the Principal's message and profile.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
       <section id="downlodpdf" class="downlodpdf-section">
     <div class="container mb-5">
@@ -1708,7 +1840,69 @@ scrollTopButton.addEventListener("click", function() {
     return false; // Prevent the form from actually submitting
 } </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    
+    
     <script>
+document.addEventListener("DOMContentLoaded", function () {
+    // STAFF Section
+    const staffCards = document.querySelectorAll("#staff .staff-card");
+    const showMoreStaffBtn = document.getElementById("show-more-staff");
+    const showLessStaffBtn = document.getElementById("show-less-staff");
+
+    staffCards.forEach((card, index) => {
+        if (index >= 6) {
+            card.classList.add("hidden");
+        }
+    });
+
+    showMoreStaffBtn.addEventListener("click", () => {
+        staffCards.forEach(card => card.classList.remove("hidden"));
+        showMoreStaffBtn.style.display = "none";
+        showLessStaffBtn.style.display = "inline-block";
+    });
+
+    showLessStaffBtn.addEventListener("click", () => {
+        staffCards.forEach((card, index) => {
+            if (index >= 6) {
+                card.classList.add("hidden");
+            }
+        });
+        showMoreStaffBtn.style.display = "inline-block";
+        showLessStaffBtn.style.display = "none";
+    });
+
+    // PREFECTS Section
+    const prefectCards = document.querySelectorAll("#prefects .staff-card");
+    const showMorePrefectsBtn = document.getElementById("show-more-prefects");
+    const showLessPrefectsBtn = document.getElementById("show-less-prefects");
+
+    prefectCards.forEach((card, index) => {
+        if (index >= 6) {
+            card.classList.add("hidden");
+        }
+    });
+
+    showMorePrefectsBtn.addEventListener("click", () => {
+        prefectCards.forEach(card => card.classList.remove("hidden"));
+        showMorePrefectsBtn.style.display = "none";
+        showLessPrefectsBtn.style.display = "inline-block";
+    });
+
+    showLessPrefectsBtn.addEventListener("click", () => {
+        prefectCards.forEach((card, index) => {
+            if (index >= 6) {
+                card.classList.add("hidden");
+            }
+        });
+        showMorePrefectsBtn.style.display = "inline-block";
+        showLessPrefectsBtn.style.display = "none";
+    });
+});
+</script>
+    
+    
+    <script>
+    
           // Navbar scroll effect
         window.addEventListener('scroll', function() {
             if (window.scrollY > 50) {
